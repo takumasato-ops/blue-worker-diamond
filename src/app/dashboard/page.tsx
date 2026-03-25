@@ -152,24 +152,21 @@ export default function Dashboard() {
         <Nav />
         <div className="max-w-3xl mx-auto px-6 py-16">
           <div className="text-center mb-10">
-            <h1 className="text-2xl font-bold mb-2">ようこそ</h1>
-            <p className="text-sub">まずは気になる職業を探してみましょう</p>
+            <h1 className="text-2xl font-bold mb-2 text-accent2">ぼうけんの はじまり</h1>
+            <p className="text-sub">まずは したい ことを えらべ</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="/jobs" className="card p-6 hover:border-accent transition text-center">
-              <div className="text-2xl mb-3">&#x1F4CB;</div>
-              <div className="font-bold text-[15px] mb-1">業種一覧を見る</div>
-              <div className="text-xs text-sub">資格・給与・キャリアパスを確認</div>
+            <a href="/jobs" className="rpg-window p-6 hover:border-accent transition text-center block">
+              <div className="text-accent2 font-bold text-[15px] mb-1">&#9654; ギルド を みる</div>
+              <div className="text-xs text-sub">業種・資格・給与を確認</div>
             </a>
-            <a href="/advisor" className="card p-6 hover:border-accent transition text-center">
-              <div className="text-2xl mb-3">&#x1F4AC;</div>
-              <div className="font-bold text-[15px] mb-1">キャリア相談をする</div>
-              <div className="text-xs text-sub">AIアドバイザーに何でも質問</div>
+            <a href="/advisor" className="rpg-window p-6 hover:border-accent transition text-center block">
+              <div className="text-accent font-bold text-[15px] mb-1">&#9654; けんじゃ に きく</div>
+              <div className="text-xs text-sub">AIアドバイザーに相談</div>
             </a>
-            <a href="/onboarding" className="card p-6 hover:border-accent transition text-center sm:col-span-2">
-              <div className="text-2xl mb-3">&#x1F48E;</div>
-              <div className="font-bold text-[15px] mb-1">AI診断で最適な資格を見つける</div>
-              <div className="text-xs text-sub">プロフィールを入力して、AIがあなたに最適な資格・ロードマップを提案</div>
+            <a href="/onboarding" className="rpg-window p-6 hover:border-accent transition text-center sm:col-span-2 block">
+              <div className="text-green font-bold text-[15px] mb-1">&#9654; てんしょく しんだん</div>
+              <div className="text-xs text-sub">AIがあなたに最適な資格・ロードマップを提案</div>
             </a>
           </div>
         </div>
@@ -193,58 +190,60 @@ export default function Dashboard() {
     <div className="min-h-screen">
       <Nav />
       <div className="max-w-5xl mx-auto px-6 py-8">
-        {/* AI Message */}
-        <div className="card p-5 mb-8">
-          <div className="text-xs text-sub uppercase tracking-wider mb-2">Today&apos;s Message</div>
+        {/* Message from Sage */}
+        <div className="rpg-window p-5 mb-8">
+          <div className="text-xs text-accent2 mb-2">&#9733; けんじゃ の ことば</div>
           <div className="text-sm text-text">{message}</div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="card p-6">
-            <div className="text-sub text-xs mb-3">推定市場価値</div>
-            <div className="flex items-end gap-1">
-              <span className="text-4xl font-black gradient-text">{currentValue}</span>
-              <span className="text-sm text-sub mb-1">万円/月</span>
+        {/* RPG Status */}
+        <div className="rpg-window p-6 mb-8">
+          <div className="text-accent2 font-bold text-sm mb-4">&#9733; {profile.name || "ゆうしゃ"} の ステータス</div>
+          <div className="space-y-3">
+            {/* Market Value as Level */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-sub w-16">しじょうち</span>
+              <span className="text-accent2 font-bold text-lg" style={{ textShadow: "0 0 8px rgba(255,215,0,0.3)" }}>{currentValue}万円/月</span>
+              <span className="text-xs text-green">+{currentValue - 22}万円 UP</span>
             </div>
-            <div className="mt-3 text-xs text-green font-medium">+{currentValue - 22}万円 UP</div>
-          </div>
-          <div className="card p-6">
-            <div className="text-sub text-xs mb-3">{profile.targetCert}</div>
-            <div className="flex items-end gap-1">
-              <span className="text-4xl font-black text-text">{progress}</span>
-              <span className="text-sm text-sub mb-1">%</span>
+            {/* EXP Bar */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-sub w-16">EXP</span>
+              <div className="flex-1 bg-surface rounded h-3 overflow-hidden border border-border">
+                <div className="exp-bar h-full transition-all" style={{ width: `${progress}%` }} />
+              </div>
+              <span className="text-xs text-accent2 w-12 text-right">{progress}%</span>
             </div>
-            <div className="mt-3 bg-bg2 rounded-full h-1.5 overflow-hidden">
-              <div className="h-full rounded-full transition-all" style={{ width: `${progress}%`, background: "#635bff" }} />
+            {/* Target */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-sub w-16">もくひょう</span>
+              <span className="text-sm">{profile.targetCert}</span>
+              <span className="text-xs text-sub">（のこり {remainHours}じかん）</span>
             </div>
-            <div className="mt-2 text-xs text-sub">残り{remainHours}時間</div>
-          </div>
-          <div className="card p-6">
-            <div className="text-sub text-xs mb-3">正答率</div>
-            <div className="flex items-end gap-1">
-              <span className="text-4xl font-black text-green">
-                {profile.quizTotal > 0 ? Math.round((profile.quizCorrect / profile.quizTotal) * 100) : 0}
-              </span>
-              <span className="text-sm text-sub mb-1">%</span>
+            {/* Quiz */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-sub w-16">せいとうりつ</span>
+              <div className="flex-1 bg-surface rounded h-3 overflow-hidden border border-border">
+                <div className="hp-bar h-full transition-all" style={{ width: `${profile.quizTotal > 0 ? Math.round((profile.quizCorrect / profile.quizTotal) * 100) : 0}%` }} />
+              </div>
+              <span className="text-xs text-green w-12 text-right">{profile.quizTotal > 0 ? Math.round((profile.quizCorrect / profile.quizTotal) * 100) : 0}%</span>
             </div>
-            <div className="mt-3 text-xs text-sub">{profile.quizCorrect}/{profile.quizTotal} 問正解</div>
           </div>
         </div>
 
         {/* Tutor Plans */}
         <div className="card p-6 mb-8">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="font-bold text-base">学習プラン</h2>
+            <h2 className="font-bold text-base text-accent2">&#9733; さくせん</h2>
             <button onClick={() => setShowGoalForm(!showGoalForm)} className="btn-primary text-xs px-4 py-1.5">
-              {showGoalForm ? "閉じる" : "新しいプランを作成"}
+              {showGoalForm ? "とじる" : "あたらしい さくせん"}
             </button>
           </div>
 
           {/* Goal Form */}
           {showGoalForm && (
-            <div className="bg-bg2 rounded-xl p-4 mb-5">
-              <div className="text-sm font-medium mb-3">いつまでに{profile.targetCert}を取得しますか？</div>
+            <div className="rpg-window p-4 mb-5">
+              <div className="text-sm font-medium mb-3 text-accent2">いつまでに {profile.targetCert} を てにいれる？</div>
               <div className="flex gap-3 items-end">
                 <div className="flex-1">
                   <label className="block text-xs text-sub mb-1">目標日</label>
@@ -253,7 +252,7 @@ export default function Dashboard() {
                     className="w-full bg-white border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
                 <button onClick={createPlan} disabled={!goalDate} className="btn-primary px-5 py-2 text-sm disabled:opacity-40">
-                  AIがプランを作成
+                  さくせん を たてる
                 </button>
               </div>
             </div>
@@ -310,7 +309,7 @@ export default function Dashboard() {
                     {/* AI Advice */}
                     <div className="bg-accent/5 border border-accent/15 rounded-xl p-4 mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <div className="text-xs font-semibold text-accent">家庭教師からのアドバイス</div>
+                        <div className="text-xs font-semibold text-accent2">&#9733; しどうしゃ の アドバイス</div>
                         <button onClick={() => fetchAdvice(activePlan)} disabled={adviceLoading === activePlan.id}
                           className="text-[11px] text-accent hover:underline disabled:opacity-50">
                           {adviceLoading === activePlan.id ? "取得中..." : "更新"}
@@ -362,14 +361,14 @@ export default function Dashboard() {
 
           {plans.length === 0 && !showGoalForm && (
             <div className="text-center py-8 text-sub text-sm">
-              目標日を設定すると、AIが週ごとの学習プランを自動作成します
+              もくひょうび を きめると、しどうしゃ が しゅうごと の さくせん を たてる
             </div>
           )}
         </div>
 
         {/* Learning Roadmap */}
         <div className="card p-6 mb-8">
-          <h2 className="font-bold text-base mb-5">学習ロードマップ</h2>
+          <h2 className="font-bold text-base mb-5 text-accent2">&#9733; ぼうけん の ちず</h2>
           <div className="space-y-2">
             {profile.roadmap.map((step, i) => (
               <div key={step.id} className={`flex items-center gap-4 p-3 rounded-xl border ${step.completed ? "border-green/20 bg-green/5" : i === completedSteps ? "border-accent/30 bg-accent/5" : "border-border bg-transparent"}`}>
