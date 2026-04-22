@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Worker Diamond | 50代社員のセカンドキャリア支援をコストゼロで</title>
+<meta name="description" content="AI資格学習プラットフォームを大手企業に完全無償提供。50代社員のセカンドキャリアを、国家資格取得で支援します。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --accent: #635bff;
+  --dark: #0a2540;
+  --green: #24b47e;
+  --orange: #ff7a00;
+  --red: #df1b41;
+  --sub: #526477;
+  --light: #8898aa;
+  --border: #e3e8ee;
+  --bg2: #f7f8fa;
+}
+body { font-family: "Noto Sans JP", -apple-system, sans-serif; color: var(--dark); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+.btn { display: inline-block; font-weight: 700; font-size: 15px; padding: 16px 40px; border-radius: 10px; transition: opacity .2s; cursor: pointer; border: none; }
+.btn:hover { opacity: .88; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.3); }
+.btn-outline:hover { background: rgba(255,255,255,.1); }
+.section { padding: 80px 0; }
+.section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+.section-title { font-size: 28px; font-weight: 900; letter-spacing: -.02em; line-height: 1.4; }
+.card { background: #fff; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .section { padding: 56px 0; }
+  .section-title { font-size: 22px; }
+  .hero h1 { font-size: 26px !important; }
+  .btn { width: 100%; text-align: center; }
+}
+
+/* Hero */
+.hero { background: var(--dark); color: #fff; padding: 80px 0 96px; text-align: center; }
+.hero .badge { display: inline-block; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.9); font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-size: 40px; font-weight: 900; line-height: 1.35; letter-spacing: -.02em; margin-bottom: 20px; }
+.hero h1 .highlight { color: var(--accent); }
+.hero p { color: rgba(255,255,255,.6); font-size: 15px; max-width: 600px; margin: 0 auto 40px; line-height: 1.8; }
+.hero .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero .note { color: rgba(255,255,255,.35); font-size: 12px; margin-top: 16px; }
+
+/* Trust */
+.trust { background: #fff; border-bottom: 1px solid var(--border); padding: 20px 0; }
+.trust-inner { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; color: var(--sub); font-size: 12px; }
+
+/* Pain */
+.pain { background: var(--bg2); }
+.pain .card { padding: 24px; display: flex; gap: 16px; }
+.pain .card .icon { font-size: 28px; flex-shrink: 0; }
+.pain .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.pain .card p { font-size: 13px; color: var(--sub); }
+
+/* Solution */
+.solution .card { padding: 24px; display: flex; gap: 16px; border-left: 4px solid var(--accent); }
+.solution .card .icon { font-size: 28px; flex-shrink: 0; }
+.solution .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.solution .card p { font-size: 13px; color: var(--sub); }
+
+/* Match */
+.match { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.match .card { padding: 20px; }
+.match .card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.match .card p { font-size: 12px; color: var(--sub); }
+
+/* Table */
+.cert-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.cert-table th { text-align: left; padding: 12px; background: var(--bg2); font-weight: 700; font-size: 13px; }
+.cert-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+.cert-table tr:nth-child(even) td { background: rgba(247,248,250,.5); }
+.salary { color: var(--green); font-weight: 600; }
+
+/* Process */
+.process { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.process .step { text-align: center; }
+.process .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; margin: 0 auto 16px; }
+.process .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.process .step p { font-size: 12px; color: var(--sub); }
+.process .step .tag { font-size: 10px; color: var(--accent); font-weight: 600; margin-top: 8px; }
+
+/* Story */
+.story .quote-card { padding: 32px; border-left: 4px solid var(--green); }
+.story .avatar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.story .avatar-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--bg2); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.story .avatar h4 { font-size: 14px; font-weight: 700; }
+.story .avatar p { font-size: 12px; color: var(--sub); }
+.story blockquote { border-left: 2px solid var(--border); padding-left: 16px; color: var(--sub); font-size: 14px; margin-bottom: 16px; line-height: 1.9; }
+.story .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.story .tag { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; }
+.story .tag-green { background: rgba(36,180,126,.1); color: var(--green); }
+.story .tag-accent { background: rgba(99,91,255,.1); color: var(--accent); }
+.story .tag-orange { background: rgba(255,122,0,.1); color: var(--orange); }
+
+/* FAQ */
+.faq { background: var(--bg2); }
+.faq .card { padding: 24px; margin-bottom: 16px; }
+.faq .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.faq .card p { font-size: 13px; color: var(--sub); }
+
+/* CTA */
+.cta { background: var(--dark); color: #fff; text-align: center; padding: 80px 0; }
+.cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 16px; line-height: 1.4; }
+.cta p { color: rgba(255,255,255,.5); font-size: 14px; max-width: 500px; margin: 0 auto 40px; }
+.cta .note { color: rgba(255,255,255,.25); font-size: 12px; margin-top: 24px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; color: var(--light); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">大手企業 人事部門のみなさまへ</div>
+    <h1>50代社員のセカンドキャリア支援を、<br><span class="highlight">コストゼロ</span>で始めませんか。</h1>
+    <p>AI資格学習プラットフォーム「Blue Worker Diamond」を完全無償で提供。<br>社員は6学科・17国家資格をAI家庭教師と一緒に学び、資格取得後のキャリアマッチングまでワンストップで支援します。</p>
+    <div class="btns">
+      <a href="mailto:info@canal-ai.com?subject=BWD導入相談" class="btn btn-primary">無料で導入相談する</a>
+      <a href="#how" class="btn btn-outline">詳しく見る</a>
+    </div>
+    <div class="note">導入費・月額費・解約費 一切なし</div>
+  </div>
+</div>
+
+<!-- Trust -->
+<div class="trust">
+  <div class="trust-inner">
+    <span>6学科・17国家資格対応</span>
+    <span>|</span>
+    <span>AI個別最適化学習</span>
+    <span>|</span>
+    <span>完全無料</span>
+    <span>|</span>
+    <span>最短当日から利用開始</span>
+  </div>
+</div>
+
+<!-- Pain -->
+<div class="section pain">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--red);">課題</div>
+      <div class="section-title">こんな課題を抱えていませんか？</div>
+    </div>
+    <div class="grid-2">
+      <div class="card"><div class="icon">👔</div><div><h3>50代社員のキャリア停滞</h3><p>役職定年後、仕事へのモチベーションが低下。「次」が見えず、組織全体のパフォーマンスにも影響。</p></div></div>
+      <div class="card"><div class="icon">📊</div><div><h3>人的資本開示への対応</h3><p>投資家・市場からリスキリング施策の可視化を求められるが、実効性のある施策がない。</p></div></div>
+      <div class="card"><div class="icon">💰</div><div><h3>早期退職制度だけでは不十分</h3><p>退職金を積んでも「辞めた後どうする」が解決しなければ応募は増えない。</p></div></div>
+      <div class="card"><div class="icon">⚖️</div><div><h3>70歳雇用義務化への備え</h3><p>2025年から努力義務化。65歳以降の就業機会確保が経営課題に。</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Solution -->
+<div class="section solution" id="how">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--accent);">解決策</div>
+      <div class="section-title">BWDが、セカンドキャリアの道を拓きます</div>
+      <p style="color:var(--sub); font-size:14px; margin-top:12px;">ホワイトカラーの経験 × ブルーカラーの国家資格 = 新しいキャリアの選択肢</p>
+    </div>
+    <div class="grid-2">
+      <div class="card"><div class="icon">🆓</div><div><h3>導入コスト・運用コスト: ゼロ</h3><p>完全無償で導入いただけます。ITシステムの追加投資も不要。社員はスマホ1台で学習開始。</p></div></div>
+      <div class="card"><div class="icon">🤖</div><div><h3>AI家庭教師による個別最適化</h3><p>社員一人ひとりの適性をAIが診断。最適な資格・学習プランを自動提案。弱点を重点指導。</p></div></div>
+      <div class="card"><div class="icon">📈</div><div><h3>市場価値の可視化</h3><p>資格取得に伴う市場価値の変化を数字で可視化。「自分の成長」を実感でき、学習が続く。</p></div></div>
+      <div class="card"><div class="icon">🏗️</div><div><h3>資格取得後の転職支援</h3><p>取得後に転職を希望される方には、人手不足の建設・電気業界への無料マッチングも実施。</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Career Match -->
+<div class="section match">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--green);">キャリアマッチ</div>
+      <div class="section-title">御社の業界経験が、そのまま武器になります</div>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>総合商社出身</h3><p>営業管理経験 → 施工管理技士で建設業界の管理職へ</p></div>
+      <div class="card"><h3>メガバンク出身</h3><p>数字に強い → 危険物取扱者で化学プラント管理職へ</p></div>
+      <div class="card"><h3>電機メーカー出身</h3><p>電気の基礎知識 → 電気工事士で独立開業も</p></div>
+      <div class="card"><h3>自動車メーカー出身</h3><p>製造管理経験 → ボイラー技士でビルメンテナンスへ</p></div>
+      <div class="card"><h3>通信・IT出身</h3><p>DX知見 → 施工管理技士で建設DXの架け橋に</p></div>
+      <div class="card"><h3>保険・金融出身</h3><p>営業力 → 施工管理技士で建設業の営業管理職に</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Cert Table -->
+<div class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--accent);">対応資格</div>
+      <div class="section-title">取得可能な国家資格</div>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="cert-table">
+        <thead><tr><th>資格名</th><th>相性の良い出身業界</th><th>想定年収</th><th>取得期間目安</th></tr></thead>
+        <tbody>
+          <tr><td><strong>第二種電気工事士</strong></td><td>電機メーカー出身者</td><td class="salary">年収420万円〜</td><td>約3ヶ月</td></tr>
+          <tr><td><strong>2級施工管理技士</strong></td><td>管理職経験者</td><td class="salary">年収480万円〜</td><td>約4ヶ月</td></tr>
+          <tr><td><strong>フォークリフト運転技能</strong></td><td>全般</td><td class="salary">年収350万円〜</td><td>最短4日</td></tr>
+          <tr><td><strong>危険物取扱者乙種4類</strong></td><td>理系出身者</td><td class="salary">年収380万円〜</td><td>約2ヶ月</td></tr>
+          <tr><td><strong>ボイラー技士2級</strong></td><td>設備管理経験者</td><td class="salary">年収380万円〜</td><td>約3ヶ月</td></tr>
+          <tr><td><strong>1級施工管理技士</strong></td><td>建設関連経験者</td><td class="salary">年収700万円〜</td><td>約6ヶ月</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Process -->
+<div class="section process">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--accent);">導入フロー</div>
+      <div class="section-title">最短当日から利用開始</div>
+    </div>
+    <div class="grid-4">
+      <div class="step"><div class="step-num">01</div><h3>お問い合わせ</h3><p>まずはお気軽にご相談ください。オンライン30分でご説明します。</p></div>
+      <div class="step"><div class="step-num">02</div><h3>トライアル導入</h3><p>10名程度の対象社員にアカウント発行。最短当日から利用開始。</p><div class="tag">即日可能</div></div>
+      <div class="step"><div class="step-num">03</div><h3>学習開始</h3><p>AIが適性診断→学習プラン自動生成。社員は自分のペースで学習。</p><div class="tag">自動運用</div></div>
+      <div class="step"><div class="step-num">04</div><h3>資格取得・キャリア支援</h3><p>合格後、転職希望者には建設・電気業界へのマッチングをご案内。</p><div class="tag">完全無料</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Story -->
+<div class="section story">
+  <div class="container" style="max-width:720px;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:var(--accent);">ストーリー</div>
+      <div class="section-title">こんなセカンドキャリアが実現します</div>
+    </div>
+    <div class="card quote-card">
+      <div class="avatar">
+        <div class="avatar-icon">👤</div>
+        <div>
+          <h4>田中さん（56歳）大手電機メーカー 元部長</h4>
+          <p>役職定年後、BWDで第二種電気工事士を取得</p>
+        </div>
+      </div>
+      <blockquote>
+        55歳で役職を外れ、定年までの5年間をどう過ごすか悩んでいました。会社がBWDを紹介してくれて、電気工事士の勉強を始めました。AIが自分のペースに合わせてくれるので、仕事の合間でも無理なく学習できた。3ヶ月で合格し、定年後は地元の電気工事会社で第二の人生をスタート。年収は下がりましたが、「自分の手で仕事をする」充実感は何物にも代えがたいです。
+      </blockquote>
+      <div class="tags">
+        <span class="tag tag-green">3ヶ月で合格</span>
+        <span class="tag tag-accent">セカンドキャリア実現</span>
+        <span class="tag tag-orange">AI学習</span>
+      </div>
+    </div>
+    <p style="text-align:center; color:var(--light); font-size:11px; margin-top:12px;">※ 想定ペルソナに基づくイメージです</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section faq">
+  <div class="container" style="max-width:720px;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="section-title">よくある質問</div>
+    </div>
+    <div class="card"><h3>本当に無料ですか？追加費用はかかりませんか？</h3><p>はい、完全無料です。導入費・月額費・解約費など一切かかりません。社員の資格取得後に転職を希望される場合、マッチング支援を行い、採用企業様から紹介手数料をいただくモデルです。御社には一切費用は発生しません。</p></div>
+    <div class="card"><h3>50代の社員でも資格は取れますか？</h3><p>はい。BWDのAI家庭教師は、一人ひとりのペースと理解度に合わせた完全個別指導です。電気工事士の試験には年齢制限はなく、50代・60代の合格者も多数います。</p></div>
+    <div class="card"><h3>どんな資格が取れますか？</h3><p>電気工事士（第一種・第二種）、施工管理技士（1級・2級）、フォークリフト運転技能、危険物取扱者乙種4類、ボイラー技士2級など、6学科・17以上の国家資格に対応しています。</p></div>
+    <div class="card"><h3>セキュリティは大丈夫ですか？</h3><p>SOC2準拠のクラウドインフラを使用。個人情報は暗号化して保管し、行レベルセキュリティで厳格にアクセス制御しています。</p></div>
+    <div class="card"><h3>社員の学習状況は管理できますか？</h3><p>はい。管理ダッシュボードで全対象社員の学習進捗・クイズ正答率・学習時間をリアルタイムで確認できます。</p></div>
+    <div class="card"><h3>転職を希望しない社員もいますが大丈夫ですか？</h3><p>もちろんです。資格取得自体がセカンドキャリアの選択肢を広げます。転職は任意であり、社内での配置転換や定年後の再雇用にも活用いただけます。</p></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="container">
+    <h2>まずは10名のトライアルから。<br>費用は一切かかりません。</h2>
+    <p>導入費ゼロ・月額ゼロ・解約費ゼロ。<br>御社の50代社員に「手に職」という新しい選択肢を、今日から届けられます。</p>
+    <a href="mailto:info@canal-ai.com?subject=BWD導入相談&body=お名前:%0A会社名:%0A部署:%0Aご検討内容:" class="btn btn-primary">無料で導入相談する</a>
+    <div class="note">オンライン30分でご説明します / 資料のみのご請求も歓迎</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>Blue Worker Diamond | Canal AI</div>
+</footer>
+
+</body>
+</html>

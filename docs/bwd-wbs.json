@@ -1,0 +1,65 @@
+{
+  "project": "BWD",
+  "title": "Blue Worker Diamond WBS - 4月スプリント",
+  "owner": "佐藤",
+  "executor": "AI CEO少年",
+  "priority": "高",
+  "deadline": "2026/04/30",
+  "tasks": [
+    {"no":1,"category":"4/17 インフラ","todo":"Supabaseプロジェクト作成・DBスキーマ設計・RLS","memo":"@supabase/supabase-js @supabase/ssr インストール済。Supabaseプロジェクト未作成（オーナー対応待ち）","start":"2026/04/17","end":"2026/04/17","status":"進行中"},
+    {"no":2,"category":"4/17 インフラ","todo":"Supabase Auth導入（メール+Google）","memo":"コード準備中。Supabaseプロジェクト作成後に接続","start":"2026/04/17","end":"2026/04/17","status":"進行中"},
+    {"no":3,"category":"4/17 インフラ","todo":"localStorage → Supabase移行","memo":"store.tsの構造分析済。移行設計完了、実装待ち","start":"2026/04/17","end":"2026/04/17","status":"進行中"},
+    {"no":"E1","category":"4/17 追加","todo":"WBSシステム構築（JSON+Apps Script+自動同期）","memo":"bwd-wbs.json、create-bwd-wbs.js、sync-wbs.sh、コミット時フック設定完了","start":"2026/04/17","end":"2026/04/17","status":"完了"},
+    {"no":"E2","category":"4/17 追加","todo":"1年事業計画策定（大手企業×セカンドキャリア戦略）","memo":"02-one-year-plan.md 作成完了。公的機関+大手企業ルートの二本柱","start":"2026/04/17","end":"2026/04/17","status":"完了"},
+    {"no":"E3","category":"4/17 追加","todo":"大手企業向けLP作成（独立HTML）","memo":"docs/lp-second-career.html。1ファイル完結、レスポンシブ対応、メール添付可能。既存サイトには影響なし","start":"2026/04/17","end":"2026/04/17","status":"完了"},
+    {"no":"E4","category":"4/17 追加","todo":"事業企画書の全面見直し","memo":"3カ年→1年計画に変更。大手企業×セカンドキャリア×コストゼロ戦略。人材紹介で収益化","start":"2026/04/17","end":"2026/04/17","status":"完了"},
+    {"no":"E5","category":"4/17 追加","todo":"Google Sheets WBS初回作成","memo":"Apps Scriptで20タスクのWBSシート+ガントチャートを自動生成。createBWD_WBS_local実行成功","start":"2026/04/17","end":"2026/04/17","status":"完了"},
+
+    {"no":4,"category":"4/18 インフラ","todo":"Stripe決済連携（Proプラン¥29,800/月）","memo":"Checkout Session、Webhook、サブスク管理","start":"2026/04/18","end":"2026/04/18","status":"未着手"},
+    {"no":5,"category":"4/18 インフラ","todo":"Vercel本番デプロイ・CI/CD","memo":"GitHub連携、プレビュー環境、環境変数設定","start":"2026/04/18","end":"2026/04/18","status":"未着手"},
+    {"no":6,"category":"4/18 インフラ","todo":"独自ドメイン取得・DNS設定","memo":"blueworkerdiamond.jp、Vercelカスタムドメイン","start":"2026/04/18","end":"2026/04/18","status":"未着手"},
+
+    {"no":7,"category":"4/19 プロダクト","todo":"GA4導入・コンバージョン設定","memo":"ページビュー、イベント、登録CV","start":"2026/04/19","end":"2026/04/19","status":"未着手"},
+    {"no":8,"category":"4/19 プロダクト","todo":"OGP画像・SEOメタデータ全ページ","memo":"title/description/OG画像/sitemap.xml/robots.txt","start":"2026/04/19","end":"2026/04/19","status":"未着手"},
+    {"no":9,"category":"4/19 プロダクト","todo":"Google Search Console登録","memo":"サイトマップ送信、インデックス申請","start":"2026/04/19","end":"2026/04/19","status":"未着手"},
+
+    {"no":10,"category":"4/20 テスト","todo":"全体結合テスト・バグ修正","memo":"認証→学習→決済の一気通貫テスト","start":"2026/04/20","end":"2026/04/20","status":"未着手"},
+    {"no":11,"category":"4/20 テスト","todo":"モバイル表示・PWA対応","memo":"Service Worker、ホーム画面追加、オフライン","start":"2026/04/20","end":"2026/04/20","status":"未着手"},
+    {"no":12,"category":"4/20 チェック","todo":"【ゲート】本番リリース準備完了判定","memo":"認証OK/DB OK/決済OK/ドメインOK/モバイルOK","start":"2026/04/20","end":"2026/04/20","status":"未着手"},
+
+    {"no":13,"category":"4/21 ローンチ","todo":"正式ローンチ！","memo":"本番環境公開、X/LinkedIn告知投稿","start":"2026/04/21","end":"2026/04/21","status":"未着手"},
+    {"no":14,"category":"4/21 ローンチ","todo":"ローンチキャンペーン開始","memo":"先着100名優先サポート、紹介コード配布","start":"2026/04/21","end":"2026/04/21","status":"未着手"},
+    {"no":15,"category":"4/21 マーケ","todo":"X公式アカウント開設・初期投稿10本","memo":"ブランディング投稿、ターゲット層フォロー","start":"2026/04/21","end":"2026/04/21","status":"未着手"},
+    {"no":16,"category":"4/21 マーケ","todo":"LinkedIn企業ページ作成","memo":"B2B向けプレゼンス構築","start":"2026/04/21","end":"2026/04/21","status":"未着手"},
+
+    {"no":17,"category":"4/22 コンテンツ","todo":"SEO記事 #1〜3 執筆・公開","memo":"電気工事士 無料/フォークリフト 免許/施工管理技士 独学","start":"2026/04/22","end":"2026/04/22","status":"未着手"},
+    {"no":18,"category":"4/22 コンテンツ","todo":"YouTube紹介動画制作","memo":"3分のBWDサービス紹介動画","start":"2026/04/22","end":"2026/04/22","status":"未着手"},
+
+    {"no":19,"category":"4/23 コンテンツ","todo":"SEO記事 #4〜7 執筆・公開","memo":"危険物 乙4/ボイラー技士/溶接 資格/配管","start":"2026/04/23","end":"2026/04/23","status":"未着手"},
+    {"no":20,"category":"4/23 マーケ","todo":"SNS毎日投稿開始・コンテンツカレンダー","memo":"X:1日2投稿、LinkedIn:週3投稿のスケジュール確立","start":"2026/04/23","end":"2026/04/23","status":"未着手"},
+
+    {"no":21,"category":"4/24 コンテンツ","todo":"SEO記事 #8〜10 執筆・公開","memo":"10記事到達！ロングテールキーワード網羅","start":"2026/04/24","end":"2026/04/24","status":"未着手"},
+    {"no":22,"category":"4/24 機能","todo":"模擬試験システム実装","memo":"時間制限、自動採点、結果分析付き","start":"2026/04/24","end":"2026/04/25","status":"未着手"},
+
+    {"no":23,"category":"4/25 機能","todo":"AIチューター強化・プロンプト改善","memo":"弱点分析精度向上、個別学習プラン自動生成","start":"2026/04/25","end":"2026/04/25","status":"未着手"},
+    {"no":24,"category":"4/25 機能","todo":"プッシュ通知実装","memo":"学習リマインド、目標通知","start":"2026/04/25","end":"2026/04/25","status":"未着手"},
+
+    {"no":25,"category":"4/26 営業","todo":"営業資料作成（PDF + Web版）","memo":"ROI計算、導入メリット、料金プラン比較","start":"2026/04/26","end":"2026/04/26","status":"未着手"},
+    {"no":26,"category":"4/26 営業","todo":"ターゲット企業リスト30社作成","memo":"建設・電気業界、規模・エリア絞り込み","start":"2026/04/26","end":"2026/04/26","status":"未着手"},
+    {"no":27,"category":"4/26 営業","todo":"コールドメールテンプレート3種作成","memo":"初回/フォローアップ/事例紹介","start":"2026/04/26","end":"2026/04/26","status":"未着手"},
+
+    {"no":28,"category":"4/27 営業","todo":"コールドメール第1弾配信（10社）","memo":"反応率計測、A/Bテスト","start":"2026/04/27","end":"2026/04/27","status":"未着手"},
+    {"no":29,"category":"4/27 マーケ","todo":"広告テスト開始（Google/X 各¥1万）","memo":"CPA測定、キーワード・クリエイティブ検証","start":"2026/04/27","end":"2026/04/27","status":"未着手"},
+    {"no":30,"category":"4/27 マーケ","todo":"メールマーケティング設定","memo":"Resend/SendGrid、ウェルカムシーケンス3通","start":"2026/04/27","end":"2026/04/27","status":"未着手"},
+
+    {"no":31,"category":"4/28 プロダクト","todo":"企業向け管理ダッシュボードMVP","memo":"社員学習状況一覧、進捗レポート、CSV出力","start":"2026/04/28","end":"2026/04/29","status":"未着手"},
+    {"no":32,"category":"4/28 ユーザー","todo":"FAQ/ヘルプ記事作成","memo":"よくある質問10件以上","start":"2026/04/28","end":"2026/04/28","status":"未着手"},
+
+    {"no":33,"category":"4/29 マーケ","todo":"プレスリリース作成・PR TIMES配信","memo":"正式ローンチ告知プレスリリース","start":"2026/04/29","end":"2026/04/29","status":"未着手"},
+    {"no":34,"category":"4/29 営業","todo":"コールドメール第2弾配信（10社）","memo":"第1弾の反応を踏まえて改善","start":"2026/04/29","end":"2026/04/29","status":"未着手"},
+
+    {"no":35,"category":"4/30 チェック","todo":"【4月末KPI】登録200名/SEO10本/SNS100フォロワー","memo":"未達→コンテンツ方向性見直し、広告予算追加検討","start":"2026/04/30","end":"2026/04/30","status":"未着手"},
+    {"no":36,"category":"4/30 チェック","todo":"【4月末KPI】B2B商談2件/メール配信20社","memo":"商談0→テレアポ追加、ターゲット業界見直し","start":"2026/04/30","end":"2026/04/30","status":"未着手"},
+    {"no":37,"category":"4/30 計画","todo":"5月以降のスプリント計画策定","memo":"4月実績を踏まえた次月タスク設計","start":"2026/04/30","end":"2026/04/30","status":"未着手"}
+  ]
+}
